@@ -10,6 +10,5 @@ class ApplicationController < Sinatra::Base
       bakery = County.find(params[:id])
       bakery.to_json(include: :constituencies)
     end
-   
-  end
+ end
   
