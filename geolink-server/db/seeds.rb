@@ -49,5 +49,4 @@ Constituency.create(constituency_code:030, constituency_name:"DADAAB",county_cod
 Constituency.create(constituency_code:032, constituency_name:"IJARA",county_code:007)
 Constituency.create(constituency_code:031, constituency_name:"FAFI",county_code:007)
 
-
 puts "🌱 Done seeding!"
