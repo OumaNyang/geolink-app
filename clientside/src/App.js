@@ -23,14 +23,14 @@ export default function App() {
       getCounties()
   }, [])
 
-      // Fetch Counties cash records 
+      // Fetch Counties records 
       const fetchCounties = async () => {
         const res = await fetch('http://localhost:9292/counties')
         const data = await res.json()
         return data
     }
 
-    // Add Petty cash records 
+    // Add county record
     const addCounty = async (county) => {
       const res = await fetch('http://localhost:9292/counties', {
           method: 'POST',
