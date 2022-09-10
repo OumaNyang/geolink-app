@@ -1,0 +1,46 @@
+{
+  "budgets": [
+    {
+      "name": "Staff Airtime",
+      "amount": "6800",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 1
+    },
+    {
+      "name": "Sales team transport",
+      "amount": "1850",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 2
+    },
+    {
+      "name": "Salary Advances",
+      "amount": "58500",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 3
+    },
+    {
+      "name": "Internet Bill",
+      "amount": "15000",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 4
+    },
+    {
+      "name": "Water bill",
+      "amount": "8500",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 5
+    },
+    {
+      "name": "HR Department",
+      "amount": "42000",
+      "exptype": "Office Expenditure",
+      "ispaidout": true,
+      "id": 6
+    }
+  ]
+}
