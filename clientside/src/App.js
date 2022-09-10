@@ -10,31 +10,28 @@ import Constituencies from './components/Constituencies'
 
 
 export default function App() {
-  const [showAddBudget, setShowAddBudget] = useState(false)
-  const [budgets, setBudgets] = useState([])
+  const [showAddCounty, setShowAddCounty] = useState(false)
+  const [counties, setCounties] = useState([])
 
   useEffect(() => {
-      const getBudgets = async () => {
-          const budgetsFromServer = await fetchBudgets()
-          setBudgets(budgetsFromServer)
+      const getCounties = async () => {
+          const countiesFromServer = await fetchCounties()
+          setCounties(countiesFromServer)
       }
-      getBudgets()
+      getCounties()
   }, [])
 
-      // Fetch Petty cash records 
-      const fetchBudgets = async () => {
-        const res = await fetch('http://localhost:5000/budgets')
+      // Fetch Counties cash records 
+      const fetchCounties = async () => {
+        const res = await fetch('http://localhost:9292/counties')
         const data = await res.json()
-
         return data
     }
 
-
-
  return (
-    <Router>
+  <Router>
   <div className='container'>
-  <Header  onAdd={() => setShowAddBudget(!showAddBudget)} showAdd={showAddBudget}    />
+  <Header  onAdd={() => setShowAddCounty(!showAddCounty)} showAdd={showAddCounty}    />
   <Route path='/about' component={About}/>
   <Route path='/constituencies' component={Constituencies}/>
   </div>

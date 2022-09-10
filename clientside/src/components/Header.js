@@ -19,7 +19,7 @@ const Header = ({ title, onAdd, showAdd, showAbout }) => {
       {location.pathname === '/' && (
         <Button
           color={showAdd ? 'red' : 'green'}
-          text={showAdd ? 'Close' : 'Add Petty Cash'}
+          text={showAdd ? 'Close' : 'Add County'}
           onClick={onAdd}
         />
       )}

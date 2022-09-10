@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
-  --primary-color: #0b5daa;
+  --primary-color: #933709;
   --success-color: green;
 
 }
@@ -37,7 +37,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   color: var(--primary-color);
-  border-bottom:5px solid #0b5daa ;
+  border-bottom:5px solid #933709 ;
 }
 .header .aboutlink{
   color: #fff;
@@ -49,7 +49,7 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
-  background: #0b5daa;
+  background: #933709;
 }
 .btn {
   display: inline-block;
@@ -152,7 +152,7 @@ footer  {
   text-align: center;
   text-decoration: none;
   font-weight: 800;
-  border-top: 2px solid #0b5daa;
+  border-top: 2px solid #933709;
 }
 .about{
 /* border: 2px solid #1d99e1; */
@@ -164,7 +164,7 @@ border-radius: 5px;
 }
 .about a{
   text-decoration: none;
-  color: #0b5daa;
+  color: #933709;
 }
 .about li{
 /*border: 3px solid rgb(34, 11, 209);*/
@@ -172,7 +172,7 @@ margin-left: 15px;
 padding:10px 20px;
 position: relative;
 font-weight: 600;
-color: #0b5daa;
+color: #933709;
 }
 .about li p{
 
