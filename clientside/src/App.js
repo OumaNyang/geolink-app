@@ -8,7 +8,6 @@ import Header from './components/Header'
 import About from './components/About'
 import Counties from './components/Counties'
 import AddCounty from './components/AddCounty'
-
 import Constituencies from './components/Constituencies'
 
 export default function App() {
@@ -44,6 +43,17 @@ export default function App() {
   }
 
 
+    // Delete County record
+ 
+    const deleteCounty = async (id) => {
+      const res = await fetch(`http://localhost:9292/counties/${id}`, {
+          method: 'DELETE',
+      })
+      //We should control the response status to decide if we will change the state or not.
+      res.status === 200
+          ? setCounties(counties.filter((county) => county.id !== id))
+          : alert('Error Deleting This petty cash record')
+  }
 
 
 
@@ -63,8 +73,7 @@ render={(props) => (
     {counties.length > 0 ? (
         <Counties
         counties={counties}
-            // onToggle={toggleReminder}
-            // onDelete={deleteBudget}
+        onDelete={deleteCounty}
         />
     ) : (
         'No county records'

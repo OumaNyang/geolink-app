@@ -22,8 +22,7 @@ const AddCounty = ({ onAdd }) => {
   }
 
   return (
- 
-    <form className='add-form' onSubmit={onSubmit}>
+     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
         <label>County Code</label>
         <input
@@ -43,7 +42,7 @@ const AddCounty = ({ onAdd }) => {
           onChange={(e) => setName(e.target.value.toUpperCase())}
         />
       </div>
-      <input type='submit' value='Save Record' className='btn btn-block' />
+      <button type='submit'  className='btn-submit' >Add Record</button>
     </form>
   )
 }

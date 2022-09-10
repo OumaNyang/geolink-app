@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #933709;
-  --success-color: green;
+  --success-color: #055a23;
 
 }
 
@@ -75,31 +75,7 @@ body {
 
 .btn-block {
   display: block;
-  width: 100%;
-}
-
-.budget {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.budget.ispaidout {
-  border-left: 5px  solid#2fa10c;  
-  background: #d5f8cb;
-  color: #0e890c; 
-
-}
-
-.budget h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.budget p {
-  color: #000000;
+  width: 80%;
 }
 
 .add-form {
@@ -183,14 +159,21 @@ color: #933709;
   font-weight: 500;
   }
 
+.btn-delete{
+color:#fff;
+background-color: #b4150a;
+padding: 2px;
+border:1px solid #b4150a;
+cursor: pointer;
+  }
 
-
-
-
-
-
-
-
+.btn-submit{
+ color:#fff;
+background-color: #055a23;
+padding: 10px;
+border:1px solid #055a23;
+cursor: pointer;
+  }
   table { 
     width: 100%; 
     border-collapse: collapse; 

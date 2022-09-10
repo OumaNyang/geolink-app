@@ -1,13 +1,22 @@
 import React from 'react'
+import {Route} from 'react-router-dom'
 
-const About = () => {
+const Constituencies = () => {
   return (
     <div className='about'>
       <h4>Kenya Constituencies</h4>
       <hr/>
-    
-      </div>
-  )
+      <Route
+path='/constituencies'
+exact
+render={(props) => (
+<>
+ No constituency records found
+</>
+)}
+/>
+</div>
+)
 }
 
-export default About
+export default Constituencies
