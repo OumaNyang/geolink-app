@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
-// import Button from './Button'
+  import Button from './Button'
 import { Link } from 'react-router-dom'
 
 const Header = ({ title, onAdd, showAdd, showAbout }) => {
-//const location = useLocation()
+ const location = useLocation()
 
   return (
     <header className='header'>
@@ -16,6 +16,15 @@ const Header = ({ title, onAdd, showAdd, showAbout }) => {
             Home
           </button>
       </Link>
+      {location.pathname === '/' && (
+        <Button
+          color={showAdd ? 'red' : 'green'}
+          text={showAdd ? 'Close' : 'Add Petty Cash'}
+          onClick={onAdd}
+        />
+      )}
+
+
    <Link className='aboutlink' to='/constituencies'>Constituencies</Link>
    <Link className='aboutlink' to='/about'>About</Link>
     </div>
