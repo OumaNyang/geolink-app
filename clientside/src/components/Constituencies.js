@@ -16,12 +16,14 @@ const [constituencies, setConstituencies] = useState([])
     getConstituencies()
 }, [])
 
-    // Fetch Constituencies records 
-    const fetchConstituencies = async () => {
-      const res = await fetch('http://localhost:9292/constituencies')
-      const data = await res.json()
-      return data
-  }
+
+      // Fetch all Constituencies records 
+      const fetchConstituencies = async () => {
+        const res = await fetch('http://localhost:9292/constituencies')
+        const data = await res.json()
+        return data
+    }
+  
 
     // Add constituency record
     const addConstituency = async (constituency) => {
@@ -60,7 +62,7 @@ render={(props) => (
 {constituencies.length > 0 ? (
  
  <table>
-   <thead>
+  <thead>
   <th>Const. code </th>
   <th>Const. name</th>
   <th>County</th>

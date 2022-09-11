@@ -1,13 +1,26 @@
 import React from 'react'
+import {useEffect, useState} from 'react'
 
-import { useState } from 'react'
-
-const AddConstituency = ({ onAdd}) => {
+const AddConstituency = ({onAdd}) => {
   const [constituency_name, setConstName] = useState('')
   const [county_code, setCountyCode] = useState('')
   const [constituency_code, setConstCode] = useState('')
+  const [counties, setCounties] = useState([])
 
-  
+  useEffect(() => {
+      const getCounties = async () => {
+          const countiesFromServer = await fetchCounties()
+          setCounties(countiesFromServer)
+      }
+      getCounties()
+  }, [])
+
+      // Fetch Counties records 
+      const fetchCounties = async () => {
+        const res = await fetch('http://localhost:9292/counties')
+        const data = await res.json()
+        return data
+    }
   const onSubmit = (e) => {
     e.preventDefault()
 
@@ -33,18 +46,15 @@ const AddConstituency = ({ onAdd}) => {
      <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
         <label>County</label>
-
-        {/* <select     onChange={(e) => setCode(e.target.value)}>
-    <option value={county_code}  >Test</option>
-    <option value={county_code}  >Test</option>
-
-    
-        </select> */}
-        <input
-          type='text' maxLength={3}
-          value={county_code}
+        <select
+          name={county_code}
           onChange={(e) => setCountyCode(e.target.value)}
-        />
+        >
+      <option value={""}  ></option>
+      {counties.map((county, index) => (
+      <option value={county.county_code}  >{county.county_name}</option>   ))}
+
+        </select>
       </div>
       <div className='form-control'>
         <label>Constituency code</label>
@@ -62,7 +72,7 @@ const AddConstituency = ({ onAdd}) => {
           onChange={(e) => setConstName(e.target.value.toUpperCase())}
         />
       </div>
-      <button type='submit'  className='btn-submit' >Add Record</button>
+      <button type='submit'  className='btn-submit' >Save Record</button>
     </form>
   )
 }
