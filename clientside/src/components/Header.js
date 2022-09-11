@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
   import Button from './Button'
 import { Link } from 'react-router-dom'
 
-const Header = ({ title, onAdd, showAdd, showAbout }) => {
+const Header = ({ title, onAdd, showAdd,showAddConst,onAddConst, showAbout }) => {
  const location = useLocation()
 
   return (
@@ -18,7 +18,7 @@ const Header = ({ title, onAdd, showAdd, showAbout }) => {
       </Link>
       {location.pathname === '/' && (
         <Button
-          color={showAdd ? 'red' : 'green'}
+          color={showAdd ? 'red' : 'info'}
           text={showAdd ? 'Close' : 'Add County'}
           onClick={onAdd}
         />
@@ -26,6 +26,13 @@ const Header = ({ title, onAdd, showAdd, showAbout }) => {
 
 
    <Link className='aboutlink' to='/constituencies'>Constituencies</Link>
+   {location.pathname === '/constituencies' && (
+        <Button
+          color={showAddConst ? 'red' : 'blue'}
+          text={showAddConst ? 'Close' : 'Add Constituency'}
+          onClick={onAddConst}
+        />
+      )}
    <Link className='aboutlink' to='/about'>About</Link>
     </div>
       

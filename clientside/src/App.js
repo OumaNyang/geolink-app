@@ -9,6 +9,8 @@ import About from './components/About'
 import Counties from './components/Counties'
 import AddCounty from './components/AddCounty'
 import Constituencies from './components/Constituencies'
+import AddConstituency from './components/AddConstituency'
+
 
 export default function App() {
   const [showAddCounty, setShowAddCounty] = useState(false)
@@ -34,15 +36,13 @@ export default function App() {
       const res = await fetch('http://localhost:9292/counties', {
           method: 'POST',
           headers: {
-              'Content-type': 'application/json',
+            'Content-type': 'application/json',
           },
           body: JSON.stringify(county),
       })
       const data = await res.json()
       setCounties([...counties, data])
   }
-
-
     // Delete County record
  
     const deleteCounty = async (id) => {
@@ -55,11 +55,6 @@ export default function App() {
           : alert('Error Deleting This petty cash record')
   }
 
-
-
-
-
-
  return (
   <Router>
   <div className='container'>
@@ -71,10 +66,9 @@ render={(props) => (
 <>
     {showAddCounty && <AddCounty onAdd={addCounty}/>}
     {counties.length > 0 ? (
-        <Counties
+     <Counties
         counties={counties}
-        onDelete={deleteCounty}
-        />
+        onDelete={deleteCounty} />
     ) : (
         'No county records'
     )}
@@ -82,9 +76,9 @@ render={(props) => (
 )}
 />
 
-  <Route path='/about' component={About}/>
-  <Route path='/constituencies' component={Constituencies}/>
-  </div>
-  </Router>
-  );
+<Route path='/about' component={About}/>
+<Route path='/constituencies' component={Constituencies}/>
+</div>
+</Router>
+);
 }
