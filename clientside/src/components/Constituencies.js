@@ -5,7 +5,6 @@ import Constituency from './Constituency'
 import AddConstituency from './AddConstituency'
 
 const Constituencies = () => {
-const [showAddConstituency, setShowAddConstituency] = useState(true)
 const [constituencies, setConstituencies] = useState([])
 
   useEffect(() => {
@@ -16,14 +15,31 @@ const [constituencies, setConstituencies] = useState([])
     getConstituencies()
 }, [])
 
+const [showAddConst, setShowAddConst] = useState(false)
 
-      // Fetch all Constituencies records 
+   // Fetch all Constituencies records 
       const fetchConstituencies = async () => {
         const res = await fetch('http://localhost:9292/constituencies')
         const data = await res.json()
         return data
     }
+
+
+        // Fetch all Constituencies records 
+        const fetchConstByCounty = async () => {
+          const res = await fetch('http://localhost:9292/constituencies/')
+          const data = await res.json()
+          return data
+      }
+    
   
+              // Fetch all Constituencies records 
+              const fetchConstbyCounty = async () => {
+                const res = await fetch('http://localhost:9292/constituencies/')
+                const data = await res.json()
+                return data
+            }
+          
 
     // Add constituency record
     const addConstituency = async (constituency) => {
@@ -57,7 +73,7 @@ path='/constituencies'
 exact
 render={(props) => (
 <>
-{showAddConstituency && <AddConstituency  onAdd={addConstituency} />}
+{showAddConst && <AddConstituency  onAdd={addConstituency} onAddConst={() => setShowAddConst(!showAddConst)} showAddConst={showAddConst} />}
 
 {constituencies.length > 0 ? (
  

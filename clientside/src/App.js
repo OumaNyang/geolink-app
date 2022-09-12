@@ -9,12 +9,12 @@ import About from './components/About'
 import Counties from './components/Counties'
 import AddCounty from './components/AddCounty'
 import Constituencies from './components/Constituencies'
-import AddConstituency from './components/AddConstituency'
-
 
 export default function App() {
   const [showAddCounty, setShowAddCounty] = useState(false)
-  const [counties, setCounties] = useState([])
+//   const [showAddConst, setShowAddConst] = useState(true)
+
+    const [counties, setCounties] = useState([])
 
   useEffect(() => {
       const getCounties = async () => {
@@ -58,7 +58,8 @@ export default function App() {
  return (
   <Router>
   <div className='container'>
-  <Header  onAdd={() => setShowAddCounty(!showAddCounty)} showAdd={showAddCounty}    />
+  <Header  onAdd={() => setShowAddCounty(!showAddCounty)} showAdd={showAddCounty}
+   />
   <Route
 path='/'
 exact

@@ -162,11 +162,20 @@ color: #933709;
 .btn-delete{
 color:#fff;
 background-color: #b4150a;
-padding: 2px;
+padding: 2px 0.8em;
 border:1px solid #b4150a;
 cursor: pointer;
   }
 
+
+ .btn-view {
+  color:#fff;
+  background-color: #0086ab;
+  padding: 2px 0.8em;
+  border:1px solid #0086ab;
+  cursor: pointer;
+
+  }
 .btn-submit{
  color:#fff;
 background-color: #055a23;
