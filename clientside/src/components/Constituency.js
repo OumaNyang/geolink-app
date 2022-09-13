@@ -1,8 +1,7 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
-// import { default as NumberFormat } from 'react-number-format';
 
-const Constituency = ({ constituency, onDelete, onToggle }) => {
+const Constituency = ({ constituency, onDelete }) => {
   return (
 <tr>
 <td>{constituency.constituency_code}</td>

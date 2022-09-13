@@ -6,16 +6,19 @@ import AddConstituency from './AddConstituency'
 
 const Constituencies = () => {
 const [constituencies, setConstituencies] = useState([])
-
   useEffect(() => {
     const getConstituencies = async () => {
     const constituenciesFromServer = await fetchConstituencies()
     setConstituencies(constituenciesFromServer)
     }
     getConstituencies()
+    // fetchConstByCounty(countycode)
 }, [])
 
 const [showAddConst, setShowAddConst] = useState(false)
+// const [showFilteredConst, setShowFilteredConst] = useState(true)
+
+const [countycode,setCountyCode] =useState('');
 
    // Fetch all Constituencies records 
       const fetchConstituencies = async () => {
@@ -23,36 +26,28 @@ const [showAddConst, setShowAddConst] = useState(false)
         const data = await res.json()
         return data
     }
+   // Fetch all Constituencies by county 
+  //const county_code= 047
 
+const filterByCounty = async (countycode) => {
+const res = await fetch(`http://localhost:9292/county-constituencies/${countycode}`)
+const filteredConst = await res.json()
+setConstituencies([...constituencies, filteredConst])
 
-        // Fetch all Constituencies records 
-        const fetchConstByCounty = async () => {
-          const res = await fetch('http://localhost:9292/constituencies/')
-          const data = await res.json()
-          return data
-      }
-    
-  
-              // Fetch all Constituencies records 
-              const fetchConstbyCounty = async () => {
-                const res = await fetch('http://localhost:9292/constituencies/')
-                const data = await res.json()
-                return data
-            }
-          
+}
 
-    // Add constituency record
-    const addConstituency = async (constituency) => {
-      const res = await fetch('http://localhost:9292/constituencies', {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify(constituency),
-      })
-      const data = await res.json()
-      setConstituencies([...constituencies, data])
-  }
+  // Add constituency record
+  const addConstituency = async (constituency) => {
+    const res = await fetch('http://localhost:9292/constituencies', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(constituency),
+    })
+    const data = await res.json()
+    setConstituencies([...constituencies, data])
+}
 
 // Delete Constituency record
 const deleteConstituency = async (id) => {
@@ -68,21 +63,36 @@ res.status === 200
 <div className='about'>
 <h4>Kenya Constituencies</h4>
 <hr/>
-      <Route
-path='/constituencies'
+
+ <div className='form-control'>
+        <label>Search By County </label>
+        <select    name={countycode}
+          onChange={function(e){ setCountyCode(e.target.value); filterByCounty(countycode)}}
+    //  onChange={(e) => setCountyCode(e.target.value)&& filterByCounty(countycode)}
+      >
+      <option value={""}  > </option>
+      <option value={"001"}  >Mombasa</option>
+      <option value={"003"}  >Lamu</option>
+      <option value={"047"}  >Nairobi</option>
+      </select>
+    </div>
+
+ <Route path='/constituencies'
 exact
 render={(props) => (
 <>
 {showAddConst && <AddConstituency  onAdd={addConstituency} onAddConst={() => setShowAddConst(!showAddConst)} showAddConst={showAddConst} />}
 
 {constituencies.length > 0 ? (
- 
+
  <table>
   <thead>
+    <tr>
   <th>Const. code </th>
   <th>Const. name</th>
   <th>County</th>
   <th>Action</th>
+  </tr>
      </thead>
      <tbody>
      {constituencies.map((constituency, index) => (
@@ -90,16 +100,13 @@ render={(props) => (
       ))}
        </tbody>
        </table>
-
 ) : (
   'No constituency records found'
 )}
-
 </>
 )}
 />
-</div>
-)
+</div> )
 }
 
 export default Constituencies

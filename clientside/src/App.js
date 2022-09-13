@@ -9,7 +9,6 @@ import About from './components/About'
 import Counties from './components/Counties'
 import AddCounty from './components/AddCounty'
 import Constituencies from './components/Constituencies'
-
 export default function App() {
   const [showAddCounty, setShowAddCounty] = useState(false)
 //   const [showAddConst, setShowAddConst] = useState(true)
@@ -79,6 +78,7 @@ render={(props) => (
 
 <Route path='/about' component={About}/>
 <Route path='/constituencies' component={Constituencies}/>
+
 </div>
 </Router>
 );

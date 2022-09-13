@@ -9,16 +9,15 @@ const County = ({ county, onDelete, onToggle }) => {
 <td>{county.county_code}</td>
 <td>{county.county_name}</td>
 <td>
-
 <Link to={`/constituencies/${county.county_code}`}>
-<button type="button" className={"btn-view "}>
+<button  type="button" className={"btn-view"}>
 <FaMapMarker  style={{ color: 'white', cursor: 'pointer' }}/>
   View
 </button>
 </Link>
  </td>
 <td>
-<button   className="btn-delete" onClick={() => {if(window.confirm(`Delete ${county.county_name} 
+<button className="btn-delete" onClick={() => {if(window.confirm(`Delete ${county.county_name} 
 county from records? Note that all constituencies will also be deleted!`)){
 onDelete(county.id)
 };}}>
