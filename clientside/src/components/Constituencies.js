@@ -15,7 +15,7 @@ const [constituencies, setConstituencies] = useState([])
     // fetchConstByCounty(countycode)
 }, [])
 
-const [showAddConst, setShowAddConst] = useState(false)
+const [showAddConst, setShowAddConst] = useState(true)
 // const [showFilteredConst, setShowFilteredConst] = useState(true)
 
 const [countycode,setCountyCode] =useState('');
@@ -31,9 +31,9 @@ const [countycode,setCountyCode] =useState('');
 
 const filterByCounty = async (countycode) => {
 const res = await fetch(`http://localhost:9292/county-constituencies/${countycode}`)
-const filteredConst = await res.json()
-setConstituencies([...constituencies, filteredConst])
-
+// setConstituencies([...constituencies, filteredConst]);
+const data = await res.json()
+return data
 }
 
   // Add constituency record

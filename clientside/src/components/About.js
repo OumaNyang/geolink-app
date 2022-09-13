@@ -6,13 +6,29 @@ const About = () => {
       <h4>About Geolink App</h4>
       <hr></hr><br></br>
       <div>
-        Github Repository Link :<a   href='https://github.com/OumaNyang/pettycash-register'>https://github.com/OumaNyang/pettycash-register</a>
-        <p>What is Petty Cash register </p>
-        This petty cash register can be used to record  petty cash expenditures in an office environment .
+      <p>Github Repository Link :<a  target={'_blank'}  href='https://github.com/OumaNyang/geolink-app'>https://github.com/OumaNyang/geolink-app</a></p>
+      <p>Geolink App host all Kenyan Countituencies and Counties and matches all respective constituencies to their counties</p>
       </div>
-      The project consist of  7 components
-
+      The project consist of serverside  and client side modules .
+      <br>
+      </br>
+      <ul>
+      <p>(a)Serverside</p>
+      <li> A Ruby API that handles all the  fetch post patch operations </li>
+      <li> It assist in fetching all constituencies  from the database using Active  Records </li>
+      </ul>
+      <ul>
+      <p>(b)Clientside</p>
+        <li> Display all counties and constiuencies data in  a table </li>
+        <li> Allow for addition of new county  and constituency record through a form</li>
+        <li>The delete button allows for deletion of a record</li>
+        <li>Form validation before posting to prevent empty posting of data </li>
+        <li>Filters constituency record with respect to their counties.</li>
+      </ul>
+      <hr></hr>
+      <div>Moringa School -Phase-3 Project Ouma Nyang 2022</div>
     </div>
+
   )
 }
 
