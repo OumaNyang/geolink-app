@@ -67,7 +67,7 @@ res.status === 200
  <div className='form-control'>
         <label>Search By County </label>
         <select    name={countycode}
-          onChange={function(e){ setCountyCode(e.target.value); filterByCounty(countycode)}}
+          onChange={handlechange}
     //  onChange={(e) => setCountyCode(e.target.value)&& filterByCounty(countycode)}
       >
       <option value={""}  > </option>

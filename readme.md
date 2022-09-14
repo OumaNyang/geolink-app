@@ -5,7 +5,7 @@
 This project consist of the client side and the serverside modules;
 #### (a) Serverside 
   > Serverside Github Link :: ```https://github.com/OumaNyang/geolink-app/serverside```
-  
+ 
 This is the end post for all ``POST,PATCH and DELETE``  operations from the clientside.
 * A Ruby API that handles all the  fetch post patch operations 
 * It assist in fetching all constituencies  from the database using Active  Records
@@ -16,6 +16,7 @@ Serverside  is created with:
 
 #### (a) Clientside 
  > Clientside  Github Link :: ```https://github.com/OumaNyang/geolink-app/clientside```
+
 * A Ruby API that handles all the  fetch post patch operations 
 * It assist in fetching all constituencies  from the database using Active  Records
 
@@ -31,7 +32,26 @@ How the Clientside works
 * Filters constituency record with respect to their counties.
 
 </hr>
-      
+
+### Setup ###
+First [Clone](https://github.com/OumaNyang/geolink-app) this repo 
+
+Open project terminal  and change directory  ``cd clientside `` to the clientside folder 
+
+Run  ``bundle install``
+
+Start the back end [serverside] server by runing the command ``bundle exec rake server``
+
+``` The base URL for the  backend is: http://localhost:9292 ```
+
+Open Terminal on the  and change directory  cd serverside to the serverside folder 
+
+Run  ```npm install```
+
+Start the front end [clientside] server by runing the command ``npm start``
+
+The base URL for your front end is: ``` http://localhost:3000 ```
+
 ### Screenshots ###
 
 ![Homepage](images/homepage.PNG "Homepage")
