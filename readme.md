@@ -5,6 +5,8 @@
 This project consist of the client side and the serverside modules;
 #### (a) Serverside 
   > Serverside Github Link :: ```https://github.com/OumaNyang/geolink-app/serverside```
+  
+This is the end post for all ``POST,PATCH and DELETE``  operations from the clientside.
 * A Ruby API that handles all the  fetch post patch operations 
 * It assist in fetching all constituencies  from the database using Active  Records
 
